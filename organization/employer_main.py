@@ -18,15 +18,3 @@ class Employer(object):
     def get_last_activity(self):
         print(f"Сотрудник {self.employer_info['name']} {self.employer_info['surname']} совершил действие '{self.employer_info['lastactivity']}'\n")
         logger.info(f"Сотрудник {self.employer_info['name']} {self.employer_info['surname']} совершил действие '{self.employer_info['lastactivity']}'\n")
-
-current_employer = Employer(3)
-
-list = ['test1', 'test2']
-
-print(list)
-
-known_face_names = []
-for current_name in current_employer.employers_names:
-    known_face_names.append(current_name['name'] + ' ' + current_name['surname'])
-
-print(known_face_names)

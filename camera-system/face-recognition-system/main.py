@@ -32,6 +32,7 @@ known_face_encodings = [
 known_face_names = []
 for current_name in current_employer.employers_names:
     known_face_names.append(current_name['name'] + ' ' + current_name['surname'])
+
 # Initialize some variables
 face_locations = []
 face_encodings = []
