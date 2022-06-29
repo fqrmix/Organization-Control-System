@@ -54,7 +54,7 @@ class FaceRecognition(object):
     def __init__(self):
         self.main_employer = Employer()
         self.main_organization = Organization()
-        path = 'C:\Users\svsergeev\Organization-Control-System\camera-system\face-recognition-system\face_enc'
+        path = 'face_enc'
         if not os.path.exists(path):
             print('File not exist! Creating encodings...')
             try:
@@ -75,12 +75,11 @@ class FaceRecognition(object):
         face_encodings = []
         face_ids = []
         whoIs = ''
-        name = None
+        user_id = None
         process_this_frame = True
 
         timeout = 10 # [seconds]
         timeout_start = time.time()
-
         while time.time() < timeout_start + timeout:
             # Grab a single frame of video
             ret, frame = video_capture.read()
@@ -114,7 +113,7 @@ class FaceRecognition(object):
                     # # If a match was found in known_face_encodings, just use the first one.
                     # if True in matches:
                     #     first_match_index = matches.index(True)
-                    #     name = known_face_names[first_match_index]
+                    #     user_id = self.data["ids"][first_match_index]
 
                     # Or instead, use the known face with the smallest distance to the new face
                     face_distances = face_recognition.face_distance(self.data["encodings"], face_encoding)

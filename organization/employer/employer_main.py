@@ -13,7 +13,7 @@ class Employer(object):
     def get_employer_info(self, id):
         self.employer_info = self.employer_database.get_user_info(id)
         if self.employer_info is not None:
-            print (self.employer_info)
+            return self.employer_info
         else: raise ValueError('ID is out of DB range!')
         
     def get_last_activity(self):
