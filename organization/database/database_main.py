@@ -50,8 +50,8 @@ class Database(object):
         except Error as e:
             print(f"The error '{e}' occurred")
     
-    def get_employers_names(self):
-        query = f"SELECT name, surname FROM users"
+    def get_employers_list(self):
+        query = f"SELECT id, name, surname FROM users"
         cursor = self.connection.cursor()
         emloyers_names = None
         try:
